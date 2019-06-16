@@ -1,5 +1,5 @@
 # README
-##usersテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -10,8 +10,9 @@
 ### Association
 - has_many :massages
 - has_many :groups, through: :members
+- has_many :members
 
-##groupsテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -20,6 +21,7 @@
 ### Association
 - has_many :messages
 - has_many :users, through: :members
+- has_many :members
 
 ## membersテーブル
 
@@ -37,7 +39,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
