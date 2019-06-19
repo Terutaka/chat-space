@@ -1,0 +1,109 @@
+
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+}
+.chat-main{
+  width:calc(100vw - 300px);
+  float: right;
+  
+  .main-header{
+    height:100px;
+    border-bottom: 1px solid $mono_color4;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    &__left-box{
+      margin-top: 35px;
+      &__current-group{
+        font-size: 20px;
+        color: $mono_color2;
+        margin-bottom: 15px;
+      }
+      &__member-list{
+        font-size: 12px;
+        color: $mono_color3;
+        display: flex;
+      }
+    }
+    &__edit-btn{
+      height: 40px;
+      line-height: 40px;
+      margin-top: 30px;
+      padding: 0 20px;
+      border: solid 1px $blue_color1;
+      color: $blue_color1;
+    }
+  }
+  .messages{
+    padding: 46px 40px;
+    background-color: $mono_color5;
+    height:calc(100vh - 190px);
+    overflow: scroll;
+    .message{
+      margin-bottom: 40px;
+      &__upper-info{
+        display: flex;
+        &__talker{
+          font-size: 16px;
+          font-weight: bold;
+          color: $mono_color6;
+        }
+        &__date{
+          font-size: 12px;
+          color:$mono_color3;
+          margin-left: 10px;
+        }
+      }
+      &__text{
+        margin-top: 10px;
+        font-size: 14px;
+        color: $mono_color6;
+      }
+    }
+    
+  }
+  .form{
+    height: 90px;
+    background-color: $mono_color7;
+    display: flex;
+    padding: 20px 40px;
+    .new_message{
+      width:100%;
+      .input-box{
+        position: relative;
+        height: 50px;
+        background-color: $mono_color1;
+        padding: 0 10px;
+        &__text{
+          font-size: 16px;
+          color: $mono_color6;
+          padding-right: 40px;
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+
+        }
+        &__image{
+          color: black;         
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          #filesend{
+            display: none;
+          }
+        }
+      }
+    }
+    .submit-btn{
+      width: 100px;
+      height: 50px;
+      margin-left: 15px;
+      background-color:$blue_color1;
+      color: $mono_color1;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+}
