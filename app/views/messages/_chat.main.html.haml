@@ -1,0 +1,35 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group  aaaaaaaa
+      .main-header__left-box__member-list
+        Member：
+        .main-header__left-box__member-list__member てるたか
+    .main-header__edit-btn Edit
+
+  .messages
+    .message 
+      .message__upper-info
+        .message__upper-info__talker てるたか
+        .message__upper-info__date 2019/06/17(Mon) 12:23:25
+      .message__text aaaaaaaaa
+    .message
+      .message__upper-info
+        .message__upper-info__talker てるたか
+        .message__upper-info__date 2019/06/17(Mon) 12:23:30
+      .message__text tanaka
+    .message
+      .message__upper-info
+        .message__upper-info__talker てるたか
+        .message__upper-info__date 2019/06/17(Mon) 12:23:34
+      .message__text kakakak
+            
+  .form
+    .new_message
+      .input-box
+        .input-box__text あああああああ
+        %label.input-box__image
+          = fa_icon 'image'
+          %input#filesend(type="file")
+            
+    .submit-btn Send
