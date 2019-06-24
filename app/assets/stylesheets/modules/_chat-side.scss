@@ -6,7 +6,6 @@
 .chat-side{
   width: 300px;
   float: left;
-  color: $mono_color1;
   background-color:$blue_color3;
 
   .side-header {
@@ -15,7 +14,7 @@
     padding: 0 20px;
     align-items: center;
     display: flex;
-    
+    color: $mono_color1;
     &__box{
       width: 100%;
       font-weight: bold;
@@ -47,16 +46,16 @@
     height: calc(100vh - 100px);
     .group{
       margin-bottom: 40px;
+      color: $mono_color1;
      &__group-name{
       font-size: 15px;
       font-weight: bold;
-      margin-bottom: 5px;
-      color: $mono_color1;
+      margin-bottom: 5px;      
      }
      &__latest-message{
       font-size: 11px;
       font-weight: bold;
-      color: $mono_color1;
+
      }
     }
 
