@@ -5,7 +5,8 @@
       .main-header__left-box__member-list
         Member：
         .main-header__left-box__member-list__member てるたか
-    = link_to "Edit",class: "main-header__edit-btn"
+    .main-header__edit-btn
+      = link_to "Edit",edit_group_path(@group)
   .messages
     .message 
       .message__upper-info
@@ -24,11 +25,11 @@
       .message__text kakakak
             
   .form
-    .new_message
+    = form_for [@group, @message] do |f|  
       .input-box
-        .input-box__text あああああああ
-        %label.input-box__image
+        = f.text_field :body, class: "input-box__text", placeholder: "type a message"    
+        = f.label :image, class: "input-box__image" do
           = fa_icon 'image'
-          %input#filesend(type="file")
+          = f.file_field :image, class: "hidden"
             
-    .submit-btn Send
+      =f.submit "Send", class: "form__submit"
