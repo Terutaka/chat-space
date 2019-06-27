@@ -1,29 +1,17 @@
 .chat-main
   .main-header
     .main-header__left-box
-      .main-header__left-box__current-group  aaaaaaaa
+      .main-header__left-box__current-group
+        = @group.name
       .main-header__left-box__member-list
         Member：
-        .main-header__left-box__member-list__member てるたか
-    .main-header__edit-btn
-      = link_to "Edit",edit_group_path(@group)
+        .main-header__left-box__member-list__member
+          - @group.users.each do |user|
+            = user.name
+    %a{href:"/groups/#{@group.id}/edit",class: "main-header__edit-btn"}Edit
   .messages
-    .message 
-      .message__upper-info
-        .message__upper-info__talker てるたか
-        .message__upper-info__date 2019/06/17(Mon) 12:23:25
-      .message__text aaaaaaaaa
-    .message
-      .message__upper-info
-        .message__upper-info__talker てるたか
-        .message__upper-info__date 2019/06/17(Mon) 12:23:30
-      .message__text tanaka
-    .message
-      .message__upper-info
-        .message__upper-info__talker てるたか
-        .message__upper-info__date 2019/06/17(Mon) 12:23:34
-      .message__text kakakak
-            
+    = render @messages
+    
   .form
     = form_for [@group, @message] do |f|  
       .input-box
