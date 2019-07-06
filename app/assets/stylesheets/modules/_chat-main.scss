@@ -26,13 +26,14 @@
         display: flex;
       }
     }
-    &__edit-btn{
+    .main-header__edit-btn{
       height: 40px;
       line-height: 40px;
       margin-top: 30px;
       padding: 0 20px;
       border: solid 1px $blue_color1;
       color: $blue_color1;
+      
     }
   }
   .messages{
@@ -66,22 +67,23 @@
   .form{
     height: 90px;
     background-color: $mono_color7;
-    display: flex;
     padding: 20px 40px;
-    .new_message{
-      width:100%;
+    .new_message{  
+      display: flex;    
       .input-box{
         position: relative;
+        width:100%;
         height: 50px;
         background-color: $mono_color1;
-        padding: 0 10px;
+        
         &__text{
           font-size: 16px;
           color: $mono_color6;
-          padding-right: 40px;
           width: 100%;
           height: 50px;
           line-height: 50px;
+          border-style: none;
+          padding: 0 40px 0 10px;
 
         }
         &__image{
@@ -90,20 +92,23 @@
           position: absolute;
           top: 10px;
           right: 10px;
-          #filesend{
+          cursor: pointer;
+          .hidden{
             display: none;
           }
         }
       }
+      .form__submit{
+        width: 100px;
+        height: 50px;
+        margin-left: 15px;
+        background-color:$blue_color1;
+        color: $mono_color1;
+        line-height: 50px;
+        text-align: center;
+      }
+    
     }
-    .submit-btn{
-      width: 100px;
-      height: 50px;
-      margin-left: 15px;
-      background-color:$blue_color1;
-      color: $mono_color1;
-      line-height: 50px;
-      text-align: center;
-    }
+
   }
 }
