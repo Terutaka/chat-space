@@ -1,4 +1,5 @@
 $(function(){
+  
   function message_build(message){
     var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
     var html = `<div class="message" >
@@ -34,6 +35,7 @@ $(function(){
       processData: false,
       contentType: false
     })
+
     .done(function(message){
       var html = message_build(message);
       $(".messages").append(html);

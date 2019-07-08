@@ -1,4 +1,5 @@
 # README
+[![Image from Gyazo](https://i.gyazo.com/4a3c2f2f6d6590c34ab9a63af92ef021.gif)](https://gyazo.com/4a3c2f2f6d6590c34ab9a63af92ef021)
 ## usersテーブル
 
 |Column|Type|Options|
