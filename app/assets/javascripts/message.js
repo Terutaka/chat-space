@@ -1,5 +1,5 @@
 $(function(){
-  
+
   function message_build(message){
     var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
     var html = `<div class="message" >
@@ -39,8 +39,7 @@ $(function(){
     .done(function(message){
       var html = message_build(message);
       $(".messages").append(html);
-      $(".input-box__text").val("");
-      $(".hidden").val("");
+      $("form")[0].reset();
       $(".form__submit").prop("disabled",false);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
