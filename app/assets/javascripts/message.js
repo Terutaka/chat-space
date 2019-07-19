@@ -51,7 +51,6 @@ $(function(){
     var reloadMessages = function() {       
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       var last_message_id = $('.message').last().data('id');//カスタムデータ属性の書き方によってdataの取得の仕方が変わる
-      console.log(last_message_id)
       var group_id = $('.chat-main').data('id')//カスタムデータ属性の書き方によってdataの取得の仕方が変わる
       $.ajax({        
         url: '/groups/'+ group_id +'/api/messages',//ルーティングで設定した通りのURLを指定
@@ -59,10 +58,8 @@ $(function(){
         dataType: 'json',
         data: {id: last_message_id}//dataオプションでリクエストに値を含める
       })
-      .done(function(data) {
-        console.log(data) 
-        data.forEach(function(message){  
-          console.log("kakak")              
+      .done(function(data) { 
+        data.forEach(function(message){               
           var insertHTML = message_build(message);
           $(".messages").append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
