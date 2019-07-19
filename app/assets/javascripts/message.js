@@ -48,29 +48,31 @@ $(function(){
     })
   });
 
-    var reloadMessages = function() {
+    var reloadMessages = function() {       
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-      var last_message_id = $('.message').last().data('message-id');
-      var group_id = $('.chat').data('group-id')
-      $.ajax({
-        //ルーティングで設定した通りのURLを指定
-        url: '/groups/'+ group_id +'/api/messages',
-        //ルーティングで設定した通りhttpメソッドをgetに指定
-        type: 'get',
+      var last_message_id = $('.message').last().data('id');//カスタムデータ属性の書き方によってdataの取得の仕方が変わる
+      console.log(last_message_id)
+      var group_id = $('.chat-main').data('id')//カスタムデータ属性の書き方によってdataの取得の仕方が変わる
+      $.ajax({        
+        url: '/groups/'+ group_id +'/api/messages',//ルーティングで設定した通りのURLを指定
+        type: 'get',//httpメソッドをgetに指定
         dataType: 'json',
-        //dataオプションでリクエストに値を含める
-        data: {id: last_message_id}
+        data: {id: last_message_id}//dataオプションでリクエストに値を含める
       })
-      .done(function(messages) {        
-        messages.forEach(function(message){
+      .done(function(data) {
+        console.log(data) 
+        data.forEach(function(message){  
+          console.log("kakak")              
           var insertHTML = message_build(message);
           $(".messages").append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-        });        
+        });
       })
       .fail(function() {
         alert('自動更新に失敗');
       });
-    };    
-  setInterval(reloadMessages, 5000);
+    };
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 5000);
+  } 
 });
